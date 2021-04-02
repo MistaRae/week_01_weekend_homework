@@ -1,6 +1,7 @@
 import unittest
 from src.pet_shop import *
 
+
 class TestPetShop(unittest.TestCase):
 
     def setUp(self):
@@ -86,13 +87,13 @@ class TestPetShop(unittest.TestCase):
 
     @unittest.skip("delete this line to run the test")
     def test_add_or_remove_cash__add(self):
-        add_or_remove_cash(self.cc_pet_shop,10)
+        add_or_remove_cash(self.cc_pet_shop, 10)
         cash = get_total_cash(self.cc_pet_shop)
         self.assertEqual(1010, cash)
 
     @unittest.skip("delete this line to run the test")
     def test_add_or_remove_cash__remove(self):
-        add_or_remove_cash(self.cc_pet_shop,-10)
+        add_or_remove_cash(self.cc_pet_shop, -10)
         cash = get_total_cash(self.cc_pet_shop)
         self.assertEqual(990, cash)
 
@@ -103,7 +104,7 @@ class TestPetShop(unittest.TestCase):
 
     @unittest.skip("delete this line to run the test")
     def test_increase_pets_sold(self):
-        increase_pets_sold(self.cc_pet_shop,2)
+        increase_pets_sold(self.cc_pet_shop, 2)
         sold = get_pets_sold(self.cc_pet_shop)
         self.assertEqual(2, sold)
 
@@ -135,7 +136,7 @@ class TestPetShop(unittest.TestCase):
     @unittest.skip("delete this line to run the test")
     def test_remove_pet_by_name(self):
         remove_pet_by_name(self.cc_pet_shop, "Arthur")
-        pet = find_pet_by_name(self.cc_pet_shop,"Arthur")
+        pet = find_pet_by_name(self.cc_pet_shop, "Arthur")
         self.assertIsNone(pet)
 
     @unittest.skip("delete this line to run the test")
@@ -192,7 +193,7 @@ class TestPetShop(unittest.TestCase):
     @unittest.skip("delete this line to run the test")
     def test_sell_pet_to_customer__pet_found(self):
         customer = self.customers[0]
-        pet = find_pet_by_name(self.cc_pet_shop,"Arthur")
+        pet = find_pet_by_name(self.cc_pet_shop, "Arthur")
 
         sell_pet_to_customer(self.cc_pet_shop, pet, customer)
 
@@ -204,7 +205,7 @@ class TestPetShop(unittest.TestCase):
     @unittest.skip("delete this line to run the test")
     def test_sell_pet_to_customer__pet_not_found(self):
         customer = self.customers[0]
-        pet = find_pet_by_name(self.cc_pet_shop,"Dave")
+        pet = find_pet_by_name(self.cc_pet_shop, "Dave")
 
         sell_pet_to_customer(self.cc_pet_shop, pet, customer)
 
@@ -216,7 +217,7 @@ class TestPetShop(unittest.TestCase):
     @unittest.skip("delete this line to run the test")
     def test_sell_pet_to_customer__insufficient_funds(self):
         customer = self.customers[1]
-        pet = find_pet_by_name(self.cc_pet_shop,"Arthur")
+        pet = find_pet_by_name(self.cc_pet_shop, "Arthur")
 
         sell_pet_to_customer(self.cc_pet_shop, pet, customer)
 
