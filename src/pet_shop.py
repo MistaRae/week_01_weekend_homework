@@ -7,5 +7,8 @@ def get_pet_shop_name(pet_shop):
 def get_total_cash(pet_shop):
     return pet_shop["admin"]["total_cash"]
 
-def add_or_remove_cash(income_or_expenditure)
-    balance = "total_cash"
+def add_or_remove_cash(pet_shop, income_or_expenditure):
+#update the total cash value using a new argument
+    pet_shop["admin"]["total_cash"] += income_or_expenditure
+    
+# def get_pets_sold(pet_sold):
