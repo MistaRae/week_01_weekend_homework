@@ -62,3 +62,24 @@ def get_customer_pet_count(customer):
 
 def add_pet_to_customer(customer, new_pet):
     customer["pets"].append(new_pet)
+
+def customer_can_afford_pet(customer, new_pet):
+    if customer["cash"] >= new_pet["price"]:
+        return True
+    return False
+
+def sell_pet_to_customer(shop, new_pet, customer):
+        #can customer afford the pet
+        #remove pet from shop
+        #increase pets sold
+        #add pet to customer
+        #remove cost of pet from customer 
+        #add cost of pet to shop balance
+    if new_pet:
+        if customer_can_afford_pet(customer, new_pet):
+            cash_to_be_removed = new_pet["price"]
+            remove_customer_cash(customer, cash_to_be_removed)
+            increase_pets_sold(shop, 1)
+            add_pet_to_customer(customer, new_pet)
+            add_or_remove_cash(shop, cash_to_be_removed)
+    
