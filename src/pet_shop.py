@@ -1,5 +1,5 @@
 # WRITE YOUR FUNCTIONS HERE
-# import pdb
+import pdb
 
 def get_pet_shop_name(cc_pet_shop):
     return cc_pet_shop["name"]
@@ -8,7 +8,7 @@ def get_total_cash(cc_pet_shop):
     return cc_pet_shop["admin"]["total_cash"]
 
 def add_or_remove_cash(cc_pet_shop, income_or_expenditure):
-#update the total cash value using a new argument
+    #update the total cash value using a new argument
     cc_pet_shop["admin"]["total_cash"] += income_or_expenditure
     
 def get_pets_sold(cc_pet_shop):
@@ -18,4 +18,22 @@ def increase_pets_sold(cc_pet_shop, no_of_pets_change):
     #update the pets sold value in admin dictionary using a new argument
     cc_pet_shop["admin"]["pets_sold"] += no_of_pets_change
 
-# def get_stock_count(cc_pet_shop, )
+def get_stock_count(cc_pet_shop):
+    #set new pets in stock variable to zero and update it with the number of pets currently in the pet shop
+    #check if there is a pet present - true/false
+    #if true +1 to current pets total 
+
+    #pets is a list, so just counting the number of entries in the list should suffice. 
+    # current_pet_stock = 0
+    return len(cc_pet_shop["pets"])
+
+def get_pets_by_breed(cc_pet_shop, breed_searched_for):
+    #for each pet, check its breed matches breed_searched_for
+    #if breed matches add to list and count that list.
+    # pdb.set_trace()
+    pets_found = []
+    for pet in cc_pet_shop["pets"]:
+        if pet["breed"] == breed_searched_for:
+            pets_found.append(pet)
+
+    return pets_found
