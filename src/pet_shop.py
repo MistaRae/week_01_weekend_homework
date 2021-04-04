@@ -37,3 +37,18 @@ def get_pets_by_breed(cc_pet_shop, breed_searched_for):
             pets_found.append(pet)
 
     return pets_found
+
+def find_pet_by_name(cc_pet_shop, name_of_pet):
+    for pet in cc_pet_shop["pets"]:
+        if pet["name"] == name_of_pet:
+            return pet
+
+def remove_pet_by_name(cc_pet_shop, name_of_pet):
+    for pet in cc_pet_shop["pets"]:
+        if pet["name"] == name_of_pet:
+            cc_pet_shop["pets"].remove(pet)
+
+def add_pet_to_stock(cc_pet_shop, new_pet):
+    cc_pet_shop["pets"].append(new_pet)
+
+
